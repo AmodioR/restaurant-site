@@ -246,6 +246,46 @@ p + h3 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+
+.menu-section > .btn {
+  margin-bottom: 1.2rem;
+}
+
+.menu-pdf-card {
+  background: linear-gradient(180deg, #fbf6ec 0%, #f5e8d4 100%);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 0.9rem;
+  box-shadow: 0 12px 28px rgba(70, 48, 31, 0.12);
+}
+
+.menu-pdf-viewer {
+  display: block;
+  width: 100%;
+  height: clamp(34rem, 75vh, 62rem);
+  border: 0;
+  border-radius: 0.7rem;
+  background: #fff;
+}
+
+.menu-pdf-fallback {
+  min-height: 18rem;
+  display: grid;
+  place-content: center;
+  gap: 0.7rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.menu-pdf-fallback p {
+  margin: 0;
+}
+
+.footer-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   background: #e7d8c2;
@@ -345,6 +385,14 @@ p + h3 {
 
   .brand-logo {
     width: clamp(2.9rem, 18vw, 3.5rem);
+  }
+
+  .menu-pdf-card {
+    padding: 0.65rem;
+  }
+
+  .menu-pdf-viewer {
+    height: clamp(28rem, 70vh, 52rem);
   }
 }
 

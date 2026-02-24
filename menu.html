@@ -27,20 +27,34 @@
     </header>
     <main>
       <section class="section">
-        <div class="container">
+        <div class="container menu-section">
           <p class="eyebrow">Menu</p>
           <h1>Menukort</h1>
-          <p>Her finder du vores aktuelle menukort som PDF-filer.</p>
-          <div class="cards two-col">
-            <article class="card"><h2>Aftenmenu</h2><p>Komplet menukort med forretter, hovedretter og desserter.</p><a class="btn btn-primary" href="#">Åbn PDF</a></article>
-            <article class="card"><h2>Drikkekort</h2><p>Udvalg af vine, øl, sodavand og varme drikke.</p><a class="btn btn-primary" href="#">Åbn PDF</a></article>
-            <article class="card"><h2>Selskabsmenu</h2><p>Forslag til grupper, selskaber og særlige arrangementer.</p><a class="btn btn-primary" href="#">Åbn PDF</a></article>
-            <article class="card"><h2>Børnemenu</h2><p>Enkle favoritter til de yngste gæster.</p><a class="btn btn-primary" href="#">Åbn PDF</a></article>
-          </div>
+          <p>Se vores aktuelle menukort herunder. PDF-filen opdateres løbende, så du altid kan finde den nyeste version.</p>
+
+          <a class="btn btn-primary" href="uploads/menu.pdf" download>Download menu (PDF)</a>
+
+          <article class="menu-pdf-card">
+            <object class="menu-pdf-viewer" data="uploads/menu.pdf" type="application/pdf" aria-label="Indlejret menukort som PDF">
+              <div class="menu-pdf-fallback">
+                <p>Kunne ikke indlæse menuen direkte her.</p>
+                <a class="btn btn-secondary" href="uploads/menu.pdf" target="_blank" rel="noopener">Åbn menu i nyt vindue</a>
+              </div>
+            </object>
+          </article>
         </div>
       </section>
     </main>
-    <footer class="site-footer"><div class="container footer-content"><p><strong>Hestestalden</strong> · Ravnsbjergvej 29, 4560 Vig</p><p><a href="tel:+4551274438">+45 51 27 44 38</a> · <a href="mailto:hestestaldenvig@gmail.com">hestestaldenvig@gmail.com</a></p><p><strong>Lukket:</strong> Mandag, Tirsdag, Onsdag og Søndag<br /><strong>Åben:</strong> Torsdag, Fredag og Lørdag fra 17:30 til 21:00</p></div></footer>
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p><strong>Hestestalden</strong> · Ravnsbjergvej 29, 4560 Vig</p>
+        <p>
+          <a href="tel:+4551274438">+45 51 27 44 38</a> ·
+          <a href="mailto:hestestaldenvig@gmail.com">hestestaldenvig@gmail.com</a>
+        </p>
+        <p class="footer-note">© Hestestalden</p>
+      </div>
+    </footer>
     <script src="js/main.js"></script>
   </body>
 </html>
