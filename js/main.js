@@ -291,6 +291,8 @@ const initializeGalleryLightbox = () => {
 
   const closeLightbox = () => {
     lightbox.hidden = true;
+    lightbox.classList.add('is-hidden');
+    lightbox.setAttribute('aria-hidden', 'true');
     lightboxImage.src = '';
     lightboxImage.alt = '';
     document.body.style.overflow = '';
@@ -300,8 +302,12 @@ const initializeGalleryLightbox = () => {
     lightboxImage.src = source;
     lightboxImage.alt = altText;
     lightbox.hidden = false;
+    lightbox.classList.remove('is-hidden');
+    lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   };
+
+  closeLightbox();
 
   galleryTriggers.forEach((trigger) => {
     trigger.addEventListener('click', () => {

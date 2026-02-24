@@ -318,6 +318,11 @@ p + h3 {
   place-items: center;
 }
 
+.lightbox.is-hidden {
+  display: none;
+  pointer-events: none;
+}
+
 .lightbox-backdrop {
   position: absolute;
   inset: 0;
