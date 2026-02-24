@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olive & Ember | Seasonal Neighborhood Kitchen</title>
+    <meta
+      name="description"
+      content="Olive & Ember is a neighborhood restaurant serving seasonal dishes, fresh pastries, and handcrafted drinks."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Site header with compact mobile navigation. -->
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="#home" aria-label="Olive and Ember homepage">Olive &amp; Ember</a>
+
+        <!-- Mobile menu button (visible on small screens). -->
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          Menu
+        </button>
+
+        <!-- Primary navigation links. -->
+        <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
+          <a href="#menu">Menu</a>
+          <a href="#about">About</a>
+          <a href="#hours">Hours</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <!-- Hero section introduces the restaurant value proposition. -->
+      <section class="hero">
+        <div class="container hero-content">
+          <p class="eyebrow">Downtown • Farm-to-table • Since 2012</p>
+          <h1>Modern comfort food, made fresh every day.</h1>
+          <p>
+            Discover chef-led seasonal plates, house-baked bread, and specialty mocktails in a warm,
+            welcoming dining room.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#menu">Explore Menu</a>
+            <a class="btn btn-secondary" href="#contact">Book a Table</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured highlights provide a quick snapshot of offerings. -->
+      <section class="highlights" aria-label="Restaurant highlights">
+        <div class="container grid-cards">
+          <article class="card">
+            <h2>Breakfast & Brunch</h2>
+            <p>Fresh pastries, sourdough toasts, and rotating seasonal omelets until 2 PM daily.</p>
+          </article>
+          <article class="card">
+            <h2>Chef's Tasting</h2>
+            <p>Nightly 5-course tasting menu with local produce and coastal-inspired flavors.</p>
+          </article>
+          <article class="card">
+            <h2>Craft Beverages</h2>
+            <p>Signature espresso, botanical mocktails, and curated wines from small producers.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Menu preview showcases key dishes in a simple mobile-first grid. -->
+      <section id="menu" class="menu-preview">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Seasonal Picks</p>
+            <h2>Featured Menu</h2>
+          </div>
+          <div class="menu-grid">
+            <article class="menu-item">
+              <h3>Charred Citrus Salmon</h3>
+              <p>Roasted fennel, quinoa pilaf, preserved lemon yogurt.</p>
+              <span>$24</span>
+            </article>
+            <article class="menu-item">
+              <h3>Wild Mushroom Risotto</h3>
+              <p>Parmesan crisp, parsley oil, toasted walnuts.</p>
+              <span>$21</span>
+            </article>
+            <article class="menu-item">
+              <h3>Honey Thyme Chicken</h3>
+              <p>Whipped potatoes, grilled broccolini, pan jus.</p>
+              <span>$23</span>
+            </article>
+            <article class="menu-item">
+              <h3>Stone Fruit Tart</h3>
+              <p>Almond cream, brûléed peach, vanilla bean gelato.</p>
+              <span>$11</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- About and practical details section. -->
+      <section id="about" class="about">
+        <div class="container about-grid">
+          <div>
+            <p class="eyebrow">Our Story</p>
+            <h2>Neighborhood hospitality with a seasonal soul.</h2>
+            <p>
+              Olive & Ember partners with nearby farms and fisheries to serve ingredient-driven meals
+              that celebrate each season. Our kitchen blends classic techniques with approachable comfort.
+            </p>
+          </div>
+          <div id="hours" class="info-card">
+            <h3>Hours</h3>
+            <ul>
+              <li><strong>Mon-Thu:</strong> 8 AM - 10 PM</li>
+              <li><strong>Fri-Sat:</strong> 8 AM - 11 PM</li>
+              <li><strong>Sunday:</strong> 9 AM - 9 PM</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer includes concise contact information. -->
+    <footer id="contact" class="site-footer">
+      <div class="container footer-grid">
+        <p><strong>Olive &amp; Ember</strong> · 125 River Street, Portland, OR</p>
+        <p>(503) 555-0147 · hello@oliveandember.com</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

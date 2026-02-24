@@ -1,0 +1,236 @@
+/*
+  Base styles
+  - Mobile-first typography and spacing.
+  - Uses CSS custom properties for consistent theming.
+*/
+:root {
+  --bg: #fcfbf8;
+  --surface: #ffffff;
+  --text: #1f1a17;
+  --muted: #615b56;
+  --accent: #c96a29;
+  --accent-dark: #a5531f;
+  --border: #e5ddd5;
+  --shadow: 0 12px 32px rgba(31, 26, 23, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+}
+
+/* Header and navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(252, 251, 248, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+}
+
+.brand {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.menu-toggle {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  font-weight: 600;
+}
+
+.primary-nav {
+  position: absolute;
+  inset: calc(100% + 1px) 1rem auto;
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.9rem;
+  box-shadow: var(--shadow);
+}
+
+.primary-nav.is-open {
+  display: flex;
+}
+
+.primary-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Hero */
+.hero {
+  padding: 4.5rem 0 3.25rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0.3rem 0 0.8rem;
+}
+
+.hero-content p {
+  max-width: 36rem;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.3rem;
+}
+
+.btn {
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--accent-dark);
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--surface);
+}
+
+/* Cards and sections */
+.highlights,
+.menu-preview,
+.about {
+  padding: 1rem 0 3rem;
+}
+
+.grid-cards,
+.menu-grid,
+.about-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.card,
+.menu-item,
+.info-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  padding: 1rem;
+}
+
+.card h2,
+.menu-item h3,
+.info-card h3 {
+  margin-top: 0;
+}
+
+.menu-item span {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 800;
+  color: var(--accent-dark);
+}
+
+.section-heading {
+  margin-bottom: 1rem;
+}
+
+.info-card ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 0 2rem;
+  background: #f8f3ee;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 0.4rem;
+}
+
+/* Tablet and up enhancements */
+@media (min-width: 48rem) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .primary-nav {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .grid-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-grid {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+}
