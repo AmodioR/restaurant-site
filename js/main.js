@@ -8,7 +8,7 @@ let hasBoundResponsiveLayoutListener = false;
 let responsiveLayoutDebounceHandle = null;
 
 const resetBodyScrollLock = () => {
-  document.body.classList.remove('menu-open');
+  document.body.classList.remove('nav-open');
   document.body.style.overflow = '';
 };
 
@@ -62,9 +62,9 @@ const initializeSiteNavigation = () => {
 
       menuToggle.setAttribute('aria-expanded', String(shouldOpen));
       primaryNav.classList.toggle('is-open', shouldOpen);
+      document.body.classList.toggle('nav-open', shouldOpen);
 
       if (shouldOpen) {
-        document.body.classList.add('menu-open');
         document.body.style.overflow = 'hidden';
       } else {
         resetBodyScrollLock();
@@ -90,6 +90,7 @@ const bindResponsiveLayoutHandler = () => {
 
 const initializeResponsiveLayout = () => {
   resetBodyScrollLock();
+  closeMobileNavigation();
   initializeSiteNavigation();
   applyResponsiveLayoutState();
   bindResponsiveLayoutHandler();
@@ -100,6 +101,9 @@ if (document.readyState === 'loading') {
 } else {
   initializeResponsiveLayout();
 }
+
+window.addEventListener('beforeunload', resetBodyScrollLock);
+window.addEventListener('pageshow', closeMobileNavigation);
 
 const pdfWorkerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 const pdfGridRenderers = new Map();
