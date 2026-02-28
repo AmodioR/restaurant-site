@@ -94,26 +94,66 @@ a {
 }
 
 .menu-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.28rem;
+  width: 2.8rem;
+  height: 2.8rem;
   border: 1px solid var(--line);
   background: var(--surface);
   border-radius: 999px;
-  padding: 0.45rem 0.9rem;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 1.15rem;
+  height: 0.12rem;
+  border-radius: 999px;
+  background: var(--primary-dark);
+  transition: transform 0.24s ease, opacity 0.2s ease;
+}
+
+body.nav-open .menu-toggle span:nth-child(1) {
+  transform: translateY(0.4rem) rotate(45deg);
+}
+
+body.nav-open .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+body.nav-open .menu-toggle span:nth-child(3) {
+  transform: translateY(-0.4rem) rotate(-45deg);
 }
 
 .primary-nav {
   position: absolute;
   inset: calc(100% + 1px) 1rem auto;
+  width: calc(100% - 2rem);
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 0.75rem;
-  padding: 0.8rem;
-  display: none;
+  padding: 0.9rem;
+  display: flex;
   flex-direction: column;
   gap: 0.7rem;
+  opacity: 0;
+  transform: translateY(-0.45rem);
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
+  z-index: 30;
 }
 
 .primary-nav.is-open {
-  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .primary-nav a {
@@ -967,6 +1007,7 @@ p + h3 {
 
   .primary-nav {
     position: static;
+    width: auto;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -976,6 +1017,11 @@ p + h3 {
     padding: 0;
     background: transparent;
     max-width: 65%;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    visibility: visible;
+    transition: none;
   }
 
   .nav-social-link {
