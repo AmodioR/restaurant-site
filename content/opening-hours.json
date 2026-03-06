@@ -1,0 +1,32 @@
+{
+  "days": [
+    {
+      "day": "Mandag",
+      "hours": "Lukket"
+    },
+    {
+      "day": "Tirsdag",
+      "hours": "Lukket"
+    },
+    {
+      "day": "Onsdag",
+      "hours": "Lukket"
+    },
+    {
+      "day": "Torsdag",
+      "hours": "17:30–21:00"
+    },
+    {
+      "day": "Fredag",
+      "hours": "17:30–21:00"
+    },
+    {
+      "day": "Lørdag",
+      "hours": "17:30–21:00"
+    },
+    {
+      "day": "Søndag",
+      "hours": "Lukket"
+    }
+  ]
+}
