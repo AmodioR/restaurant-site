@@ -1,12 +1,12 @@
 {
-  "aftenmenu": "/uploads/menu.pdf",
+  "mindesammenkomst": "/uploads/Menu - Mindesammenkomst.pdf",
+  "firma": "/uploads/Menu - Firma arrangement.pdf",
   "frokostmenu": "/uploads/Menu-frokost.pdf",
   "barnedaab": "/uploads/Menu - Barnedåb.pdf",
-  "bisaettelse": "/uploads/Menu - Bisættelse.pdf",
-  "firma": "/uploads/Menu - Firma arrangement.pdf",
   "foedselsdag": "/uploads/Menu - Fødselsdag.pdf",
+  "bisaettelse": "/uploads/Menu - Bisættelse.pdf",
+  "konfirmation": "/uploads/Menu - Konfirmation.pdf",
   "generalforsamling": "/uploads/Menu - Generalforsamling.pdf",
   "jubilaeum": "/uploads/Menu - Jubilæum.pdf",
-  "konfirmation": "/uploads/Menu - Konfirmation.pdf",
-  "mindesammenkomst": "/uploads/Menu - Mindesammenkomst.pdf"
+  "aftenmenu": "/uploads/menu-firma-arrangement.pdf"
 }
