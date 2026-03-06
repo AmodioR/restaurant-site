@@ -130,6 +130,79 @@ if (document.readyState === 'loading') {
 window.addEventListener('beforeunload', resetBodyScrollLock);
 window.addEventListener('pageshow', closeMobileNavigation);
 
+
+const openingHoursFallbackDays = [
+  { day: 'Mandag', hours: 'Lukket' },
+  { day: 'Tirsdag', hours: 'Lukket' },
+  { day: 'Onsdag', hours: 'Lukket' },
+  { day: 'Torsdag', hours: '17:30–21:00' },
+  { day: 'Fredag', hours: '17:30–21:00' },
+  { day: 'Lørdag', hours: '17:30–21:00' },
+  { day: 'Søndag', hours: 'Lukket' },
+];
+
+const sanitizeOpeningHoursDays = (days) => {
+  if (!Array.isArray(days)) {
+    return openingHoursFallbackDays;
+  }
+
+  const sanitizedDays = days
+    .filter((entry) => entry && typeof entry === 'object')
+    .map((entry) => ({
+      day: typeof entry.day === 'string' ? entry.day.trim() : '',
+      hours: typeof entry.hours === 'string' ? entry.hours.trim() : '',
+    }))
+    .filter((entry) => entry.day && entry.hours);
+
+  return sanitizedDays.length ? sanitizedDays : openingHoursFallbackDays;
+};
+
+const renderOpeningHoursList = (listElement, days) => {
+  listElement.innerHTML = '';
+
+  days.forEach((entry) => {
+    const listItem = document.createElement('li');
+    const dayText = document.createElement('span');
+    const hoursText = document.createElement('span');
+
+    dayText.textContent = entry.day;
+    hoursText.textContent = entry.hours;
+
+    listItem.append(dayText, hoursText);
+    listElement.appendChild(listItem);
+  });
+};
+
+const initializeHomepageOpeningHours = async () => {
+  if (page !== 'forside') {
+    return;
+  }
+
+  const openingHoursList = document.querySelector('[data-opening-hours-list]');
+  if (!openingHoursList) {
+    return;
+  }
+
+  let days = openingHoursFallbackDays;
+
+  try {
+    const response = await fetch('/content/opening-hours.json', { cache: 'no-store' });
+
+    if (!response.ok) {
+      throw new Error(`Kunne ikke hente content/opening-hours.json (${response.status})`);
+    }
+
+    const data = await response.json();
+    days = sanitizeOpeningHoursDays(data && data.days);
+  } catch (error) {
+    console.warn('Faldt tilbage til standard åbningstider for forsiden.', error);
+  }
+
+  renderOpeningHoursList(openingHoursList, days);
+};
+
+initializeHomepageOpeningHours();
+
 const menuPdfDefaults = {
   aftenmenu: '/uploads/menu.pdf',
   frokostmenu: '/uploads/Menu-frokost.pdf',

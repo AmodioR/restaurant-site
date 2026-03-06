@@ -93,3 +93,20 @@ collections:
             fields:
               - { label: "Billede", name: "src", widget: "image" }
               - { label: "Alt tekst", name: "alt", widget: "string", required: false }
+
+  - name: "aabningstider"
+    label: "Åbningstider"
+    files:
+      - label: "Åbningstider"
+        name: "opening_hours"
+        file: "content/opening-hours.json"
+        fields:
+          - label: "Dage"
+            name: "days"
+            widget: "list"
+            summary: "{{fields.day}} — {{fields.hours}}"
+            min: 7
+            max: 7
+            fields:
+              - { label: "Dag", name: "day", widget: "string" }
+              - { label: "Åbningstid", name: "hours", widget: "string" }
