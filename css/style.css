@@ -1079,6 +1079,30 @@ p + h3 {
   }
 }
 
+@media (max-width: 768px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1100;
+    background: var(--surface);
+  }
+
+  .gallery-grid--photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .gallery-item {
+    border-radius: 0.75rem;
+  }
+
+  .gallery-item img {
+    height: 8.5rem;
+    aspect-ratio: auto;
+    object-fit: cover;
+  }
+}
+
 .news-feed {
   display: grid;
   gap: 1.4rem;
