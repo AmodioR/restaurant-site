@@ -105,11 +105,11 @@ collections:
         name: "gallery"
         file: "content/gallery.json"
         hint: "Upload galleribilleder her. Brug uploads/gallery som mappe for nye filer."
-        field:
-          label: "Billeder"
-          name: "items"
-          widget: "list"
-          summary: "{{fields.src}}"
-          fields:
-            - { label: "Billede", name: "src", widget: "image", required: true, media_folder: "uploads/gallery", public_folder: "/uploads/gallery" }
-            - { label: "Alt-tekst", name: "alt", widget: "string", required: false }
+        fields:
+          - label: "Billeder"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.src}}"
+            fields:
+              - { label: "Billede", name: "src", widget: "image", required: true, media_folder: "uploads/gallery", public_folder: "/uploads/gallery" }
+              - { label: "Alt-tekst", name: "alt", widget: "string", required: false }
