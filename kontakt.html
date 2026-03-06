@@ -157,6 +157,12 @@
 
           forespFeedback.hidden = false;
           kontaktForm.reset();
+
+          if (typeof clearStoredContactDraft === "function") {
+            clearStoredContactDraft();
+          } else {
+            localStorage.removeItem("contactFormDraft");
+          }
         });
       }
     </script>

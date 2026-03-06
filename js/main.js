@@ -550,6 +550,8 @@ const initializeMenuPdf = async () => {
 
 initializeMenuPdf();
 
+const arrangementStorageKey = 'selectedArrangement';
+
 const initializeArrangementSelector = async () => {
   if (document.body.dataset.page !== 'arrangementer') {
     return;
@@ -653,17 +655,88 @@ const initializeArrangementSelector = async () => {
   };
 
   arrangementSelect.addEventListener('change', () => {
+    const selectedValue = arrangementSelect.value;
+    if (selectedValue) {
+      localStorage.setItem(arrangementStorageKey, selectedValue);
+    } else {
+      localStorage.removeItem(arrangementStorageKey);
+    }
+
     updateArrangementDisplay();
     updateArrangementContactCta();
   });
+
+  const savedArrangement = localStorage.getItem(arrangementStorageKey);
+  if (savedArrangement && arrangementSelect.querySelector(`option[value="${savedArrangement}"]`)) {
+    arrangementSelect.value = savedArrangement;
+  }
 
   hideAllSections();
   defaultMessage.classList.remove('hidden');
   defaultMessage.hidden = false;
   updateArrangementContactCta();
+  await updateArrangementDisplay();
 };
 
 initializeArrangementSelector();
+
+const contactFormStorageKey = 'contactFormDraft';
+const contactFormFieldMap = {
+  name: '#foresp-navn',
+  email: '#foresp-email',
+  phone: '#foresp-telefon',
+  subject: '#subject',
+  message: '#foresp-besked',
+};
+
+const getStoredContactDraft = () => {
+  try {
+    const rawValue = localStorage.getItem(contactFormStorageKey);
+    if (!rawValue) {
+      return {};
+    }
+
+    const parsed = JSON.parse(rawValue);
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch (error) {
+    console.warn('Kunne ikke læse gemt kontaktkladde.', error);
+    return {};
+  }
+};
+
+const setStoredContactDraft = (draft) => {
+  localStorage.setItem(contactFormStorageKey, JSON.stringify(draft));
+};
+
+const clearStoredContactDraft = () => {
+  localStorage.removeItem(contactFormStorageKey);
+};
+
+const initializeContactFormDraftPersistence = () => {
+  if (document.body.dataset.page !== 'kontakt') {
+    return;
+  }
+
+  const draft = getStoredContactDraft();
+
+  Object.entries(contactFormFieldMap).forEach(([fieldKey, selector]) => {
+    const field = document.querySelector(selector);
+    if (!field) {
+      return;
+    }
+
+    const storedValue = draft[fieldKey];
+    if (typeof storedValue === 'string' && storedValue && !field.value) {
+      field.value = storedValue;
+    }
+
+    field.addEventListener('input', () => {
+      const latestDraft = getStoredContactDraft();
+      latestDraft[fieldKey] = field.value;
+      setStoredContactDraft(latestDraft);
+    });
+  });
+};
 
 const initializeContactSubjectPrefill = () => {
   if (document.body.dataset.page !== 'kontakt') {
@@ -680,9 +753,13 @@ const initializeContactSubjectPrefill = () => {
 
   if (subjectFromQuery) {
     subjectInput.value = subjectFromQuery;
+    const latestDraft = getStoredContactDraft();
+    latestDraft.subject = subjectFromQuery;
+    setStoredContactDraft(latestDraft);
   }
 };
 
+initializeContactFormDraftPersistence();
 initializeContactSubjectPrefill();
 
 const formatNewsDate = (dateString) => {
