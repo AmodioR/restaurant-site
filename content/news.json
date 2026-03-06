@@ -11,6 +11,13 @@
         "url": "./uploads/vlt-menu.pdf",
         "title": "Valentinsmenu (PDF)"
       }
+    },
+    {
+      "id": "ny-hjemmeside",
+      "title": "Velkommen til vores helt egen hjemmeside",
+      "date": "2026-03-06",
+      "excerpt": "Vi er kommet online",
+      "body": "Så skete noget vi har arbejdet hen imod i lang tid, og kan nu endelig offentlig gøre at vores helt egen hjemmeside nu er online."
     }
   ]
 }
