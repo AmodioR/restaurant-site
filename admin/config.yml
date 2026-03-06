@@ -34,60 +34,60 @@ collections:
   - name: "menuer"
     label: "Menuer"
     files:
-      - label: "Aftenmenu"
+      - file: "uploads/menu.pdf"
+        label: "Aftenmenu"
         name: "aftenmenu"
-        file: "uploads/menu.pdf"
         fields:
-          - { label: "PDF", name: "file", widget: "file", hint: "Upload ny aftenmenu (PDF)" }
-      - label: "Frokostmenu"
+          - { label: "PDF fil", name: "file", widget: "file" }
+      - file: "uploads/Menu-frokost.pdf"
+        label: "Frokostmenu"
         name: "frokostmenu"
-        file: "uploads/Menu-frokost.pdf"
         fields:
-          - { label: "PDF", name: "file", widget: "file", hint: "Upload ny frokostmenu (PDF)" }
+          - { label: "PDF fil", name: "file", widget: "file" }
 
   - name: "arrangement_menuer"
     label: "Arrangement-menuer"
     files:
-      - label: "Barnedåb"
+      - file: "uploads/Menu - Barnedåb.pdf"
+        label: "Barnedåb"
         name: "barnedaab"
-        file: "uploads/Menu - Barnedåb.pdf"
         fields:
-          - { label: "PDF", name: "file", widget: "file" }
-      - label: "Bisættelse"
+          - { label: "PDF fil", name: "file", widget: "file" }
+      - file: "uploads/Menu - Bisættelse.pdf"
+        label: "Bisættelse"
         name: "bisaettelse"
-        file: "uploads/Menu - Bisættelse.pdf"
         fields:
-          - { label: "PDF", name: "file", widget: "file" }
-      - label: "Firma arrangement"
-        name: "firma_arrangement"
-        file: "uploads/Menu - Firma arrangement.pdf"
+          - { label: "PDF fil", name: "file", widget: "file" }
+      - file: "uploads/Menu - Firma arrangement.pdf"
+        label: "Firmaarrangement"
+        name: "firma"
         fields:
-          - { label: "PDF", name: "file", widget: "file" }
-      - label: "Fødselsdag"
+          - { label: "PDF fil", name: "file", widget: "file" }
+      - file: "uploads/Menu - Fødselsdag.pdf"
+        label: "Fødselsdag"
         name: "foedselsdag"
-        file: "uploads/Menu - Fødselsdag.pdf"
         fields:
-          - { label: "PDF", name: "file", widget: "file" }
-      - label: "Generalforsamling"
+          - { label: "PDF fil", name: "file", widget: "file" }
+      - file: "uploads/Menu - Generalforsamling.pdf"
+        label: "Generalforsamling"
         name: "generalforsamling"
-        file: "uploads/Menu - Generalforsamling.pdf"
         fields:
-          - { label: "PDF", name: "file", widget: "file" }
-      - label: "Jubilæum"
+          - { label: "PDF fil", name: "file", widget: "file" }
+      - file: "uploads/Menu - Jubilæum.pdf"
+        label: "Jubilæum"
         name: "jubilaeum"
-        file: "uploads/Menu - Jubilæum.pdf"
         fields:
-          - { label: "PDF", name: "file", widget: "file" }
-      - label: "Konfirmation"
+          - { label: "PDF fil", name: "file", widget: "file" }
+      - file: "uploads/Menu - Konfirmation.pdf"
+        label: "Konfirmation"
         name: "konfirmation"
-        file: "uploads/Menu - Konfirmation.pdf"
         fields:
-          - { label: "PDF", name: "file", widget: "file" }
-      - label: "Mindesammenkomst"
+          - { label: "PDF fil", name: "file", widget: "file" }
+      - file: "uploads/Menu - Mindesammenkomst.pdf"
+        label: "Mindesammenkomst"
         name: "mindesammenkomst"
-        file: "uploads/Menu - Mindesammenkomst.pdf"
         fields:
-          - { label: "PDF", name: "file", widget: "file" }
+          - { label: "PDF fil", name: "file", widget: "file" }
 
   - name: "event_pdf"
     label: "Valentins PDF"
