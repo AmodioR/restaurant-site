@@ -1,32 +1,32 @@
 {
   "days": [
     {
-      "day": "Mandag",
+      "day": "Se vores Facebook side \"Det sker i Hestestalden\" - Vig Festival 2026",
       "hours": "Lukket"
     },
     {
-      "day": "Tirsdag",
-      "hours": "Lukket"
+      "day": "Tirsdag under Vig Festival",
+      "hours": "15.00-22.00"
     },
     {
-      "day": "Onsdag",
-      "hours": "17.30-21.00"
+      "day": "Onsdag under Vig Festival",
+      "hours": "15.00-22.00"
     },
     {
-      "day": "Torsdag",
-      "hours": "17:30–21:00"
+      "day": "Torsdag under Vig Festival",
+      "hours": "13.00-23.00"
     },
     {
-      "day": "Fredag",
-      "hours": "17:30–21:00"
+      "day": "Fredag under Vig Festival",
+      "hours": "13.00-23.00"
     },
     {
-      "day": "Lørdag",
-      "hours": "17:30–21:00"
+      "day": "Lørdag under Vig Festival",
+      "hours": "13.00-23.00"
     },
     {
-      "day": "Søndag",
-      "hours": "Lukket"
+      "day": "Søndag under Vig Festival",
+      "hours": "12.00-17.00"
     }
   ]
 }
