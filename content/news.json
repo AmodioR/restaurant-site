@@ -56,6 +56,14 @@
       "excerpt": "Vi ønsker jer en hyggelig aften.....",
       "body": "Vi serverer en udvalgt menu..",
       "pdf": "/uploads/sankt-hans-2026.pdf"
+    },
+    {
+      "id": "1aars-dag",
+      "title": "1 års fødselsdag",
+      "excerpt": "Lad os forkæle jer....",
+      "body": "Vi fejrer vores 1 års fødselsdag med en hyggelig menu den 2. og 3. oktober 2026.",
+      "pdf": "/uploads/1_aars_foedselsdag_hestestalden_vig.pdf",
+      "date": "2026-10-02"
     }
   ]
 }
